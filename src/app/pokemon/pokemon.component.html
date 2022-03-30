@@ -1,0 +1,12 @@
+<mat-card (click)="onClick()">
+  <img mat-card-lg-image src="{{pokemon.sprites.other['official-artwork'].front_default}}">
+  <mat-card-content>
+    <h2>{{pokemon.name}}</h2>
+    <p>#{{pokemon.id}}</p>
+    <p>Weight: {{pokemon.weight}}</p>
+    <p>Height: {{pokemon.height}}</p>
+    <ul *ngFor="let type of pokemon.types">
+      <li>{{type.type.name}}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>

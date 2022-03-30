@@ -1,0 +1,15 @@
+mat-card {
+  padding: 100px 50px;
+  margin: 100px 25px;
+  cursor: pointer;
+}
+
+img{
+  justify-self: center;
+}
+
+mat-card-content {
+  width: 200px;
+  height: 200px;
+  border: 2px;
+}
