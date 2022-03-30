@@ -4,8 +4,7 @@
 
 <div class="container">
   <div *ngFor="let pokemon of pokemonList">
-    <app-pokemon [inPokemon]="pokemon">
-    </app-pokemon>
+    <app-pokemon [inPokemon]="pokemon" *ngIf="show || pokemon.name === selectedPokemon"></app-pokemon>
   </div>
 
 </div>

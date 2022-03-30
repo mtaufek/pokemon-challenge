@@ -22,9 +22,14 @@ export class PokemonComponent implements OnInit {
   }
 
   onClick(){
-    this.dialog.open(PokemonDialogComponent, {
+    const dialogRef = this.dialog.open(PokemonDialogComponent, {
       data: this.pokemon
     })
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("Chose", result);
+      this.pokemonService.getSelected(result);
+    });
   }
 
 }

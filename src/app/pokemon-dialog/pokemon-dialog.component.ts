@@ -14,15 +14,18 @@ export class PokemonDialogComponent implements OnInit {
     private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
+    console.log(this.data);
   }
 
-  onSelect(item: any){
-    this.pokemonService.getPokemon(item);
+  onSelect(item: any): any{
+    console.log(item)
+    this.pokemonService.getSelected(item);
     console.log(item)
     this.matDialogRef.close();
   }
 
   cancel(){
+    console.log("not selected");
     this.matDialogRef.close();
   }
 

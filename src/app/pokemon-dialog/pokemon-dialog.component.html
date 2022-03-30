@@ -1,4 +1,6 @@
 <p> Do you want to select {{data.name}}? </p>
-<img src="{{data.sprites.front_default}}" />
-<button mat-dialog-close>No Thanks</button>
-<button click="onSelect(data)">Ok</button>
+<img src="{{data.sprites.other.dream_world.front_default}}" />
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>Ok</button>
+</div>

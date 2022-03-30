@@ -10,11 +10,24 @@ export class AppComponent implements OnInit {
   title = 'pokemon-challenge';
   starterPokemon = ["bulbasaur", "squirtle", "charmander"];
   subscribePokemonService!: Subscription;
+  selectedPokemon = '';
+  show = true;
+
   arr: any = []
   pokemonList!: any;
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
+    this.pokemonService.subjectSelected$.subscribe((data:any) => {
+      console.log(data)
+      if(data) {
+        this.show = false;
+        this.selectedPokemon = data;
+      }else{
+        this.show = true;
+        this.selectedPokemon = '';
+      }
+    })
     for(let pokemon of this.starterPokemon){
       this.arr.push(this.pokemonService.getPokemon(pokemon));
     }
